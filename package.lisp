@@ -2,6 +2,10 @@
 
 (defpackage :cl-opencv
   (:use #:cl)
+  (:import-from :cffi
+                #:mem-ref
+                #:null-pointer
+                #:with-foreign-object)
   (:export 
    ;; core - basic structures
    #:cv-point

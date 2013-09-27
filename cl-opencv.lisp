@@ -10,9 +10,16 @@
 
 (cffi:define-foreign-library highgui
   (:darwin (:or "libopencv_highgui.2.2.0.dylib" "libopencv_highgui.dylib"))
-  (:unix (:or "libhighgui.so.2.1.0" "libhighgui.so" ))
+  (:unix (:or "libhighgui.so.2.1.0" "libhighgui.so" "libopencv_highgui.so"))
   (t (:default "libhighgui")))
 (cffi:use-foreign-library highgui)
+
+
+(cffi:define-foreign-library calib3d
+  (:darwin (:or "libopencv_calib3d.2.2.0.dylib" "libopencv_calib3d.dylib"))
+  (:unix (:or "libcalib3d.so.2.1.0" "libcalib3d.so" "libopencv_calib3d.so"))
+  (t (:default "libcalib3d")))
+(cffi:use-foreign-library calib3d)
 
 (cffi:define-foreign-library cl-opencv-glue
   (:darwin "libcl-opencv-glue.dylib")
